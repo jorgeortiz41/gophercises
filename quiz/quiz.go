@@ -8,6 +8,7 @@ import (
 	"time"         // time is Go's library for time manipulation
 )
 
+// Function to read CSV file and return a map of problems
 func getProblems(filename string) map[string]string {
 	problemMap := make(map[string]string)
 
@@ -37,6 +38,7 @@ func getProblems(filename string) map[string]string {
 	return problemMap
 }
 
+// Function to run the quiz
 func quiz(problems map[string]string, seconds int) string { // Return type is a string and an error
 	correct := 0
 	total := len(problems)
