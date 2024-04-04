@@ -10,13 +10,13 @@ import (
 func printMemUsage() {
 	var m runtime.MemStats
 	runtime.ReadMemStats(&m)
-	fmt.Printf("Alloc = %v MiB", bToMb(m.Alloc))             //print memory usage in MiB
-	fmt.Printf("\tTotalAlloc = %v MiB", bToMb(m.TotalAlloc)) //print total memory allocated in MiB
-	fmt.Printf("\tSys = %v MiB", bToMb(m.Sys))               //print total system memory in MiB
-	fmt.Printf("\tNumGC = %v\n", m.NumGC)                    //print number of garbage collections
+	fmt.Printf("Alloc = %v MiB", byteToMb(m.Alloc))             //print memory usage in MiB
+	fmt.Printf("\tTotalAlloc = %v MiB", byteToMb(m.TotalAlloc)) //print total memory allocated in MiB
+	fmt.Printf("\tSys = %v MiB", byteToMb(m.Sys))               //print total system memory in MiB
+	fmt.Printf("\tNumGC = %v\n", m.NumGC)                       //print number of garbage collections
 }
 
-func bToMb(b uint64) uint64 {
+func byteToMb(b uint64) uint64 {
 	return b / 1024 / 1024
 }
 
